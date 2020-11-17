@@ -1,26 +1,19 @@
+tabl_sando = []
+table_brita = []
+
+
 def jugadores():
     pass
 
 
-def tamtabl_sando(tamtabl):
-    tabl_sando = []
+def tamtabl_init(tamtabl, tab_usar):
     for fila in range(tamtabl):
-        tabl_sando.append([])
+        tab_usar.append([])
         for columna in range(tamtabl):
-            tabl_sando[fila].append(0)
-        print(tabl_sando[fila])
+            tab_usar[fila].append(0)
+        print(tab_usar[fila])
     print(" - " * tamtabl)
-    return tabl_sando
-
-
-def tamtabl_brita(tamtabl):
-    table_brita = []
-    for fila in range(tamtabl):
-        table_brita.append([])
-        for columna in range(tamtabl):
-            table_brita[fila].append(0)
-        print(table_brita[fila])
-    return table_brita
+    return tab_usar
 
 
 def sandokan():
@@ -42,14 +35,14 @@ def partespecial():
 def tamtable():
     tamtabl = int(input("Ingrese el tamaño de su tablero nxn (min 10): "))
     if tamtabl >= 10:
-        tamtabl_sando(tamtabl)
-        tamtabl_brita(tamtabl)
+        tamtabl_init(tamtabl, tabl_sando)
+        tamtabl_init(tamtabl, table_brita)
     else:
         while tamtabl < 10:
             tamtabl = int(input("El nro ingresado es menor a 10, ingrese un numero mayor o igual: "))
             if tamtabl >= 10:
-                tamtabl_sando(tamtabl)
-                tamtabl_brita(tamtabl)
+                tamtabl_init(tamtabl, tabl_sando)
+                tamtabl_init(tamtabl, table_brita)
 
 
 def main():
